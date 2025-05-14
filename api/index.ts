@@ -15,15 +15,12 @@ const HUBSPOT_SCOPES = 'crm.objects.contacts.read crm.objects.contacts.write crm
 
 app.get('/', (req: Request, res: Response) => {
   res.json({
-    "title": "Webhook senden",
-    "properties": [],
+    "title": "Einfache Karte",
     "actions": [
       {
-        "type": "ACTION_HOOK",
-        "text": "Los geht's!",
-        "tooltip": "Sendet einen Webhook mit Deal-Daten",
-        "confirmationMessage": "Willst du das wirklich tun?",
-        "actionHook": "https://hooks.zapier.com/hooks/catch/xyz"
+        "type": "IFRAME",
+        "uri": "https://example.com",
+        "buttonText": "Klick Mich"
       }
     ]
   });
