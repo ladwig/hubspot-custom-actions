@@ -48,6 +48,14 @@ app.get('/start-hubspot-oauth', (req: Request, res: Response) => {
 
 // OAuth callback endpoint to exchange authorization code for tokens
 app.get('/oauth-callback', async (req: Request, res: Response) => {
+  console.log('[DEBUG] Vercel Environment Variables Check:');
+  console.log('[DEBUG] HUBSPOT_CLIENT_ID:', process.env.HUBSPOT_CLIENT_ID ? 'SET' : 'NOT SET/EMPTY');
+  console.log('[DEBUG] HUBSPOT_CLIENT_SECRET:', process.env.HUBSPOT_CLIENT_SECRET ? 'SET (partially hidden)' : 'NOT SET/EMPTY'); // Log only presence for secret
+  console.log('[DEBUG] HUBSPOT_REDIRECT_URI:', process.env.HUBSPOT_REDIRECT_URI);
+  // For more detailed debugging, you could log the actual value of non-sensitive vars, but be careful with secrets.
+  // console.log('[DEBUG] Actual HUBSPOT_CLIENT_ID:', process.env.HUBSPOT_CLIENT_ID);
+  // console.log('[DEBUG] Actual HUBSPOT_REDIRECT_URI:', process.env.HUBSPOT_REDIRECT_URI);
+
   const authorizationCode = req.query.code as string;
 
   if (!authorizationCode) {
