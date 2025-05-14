@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "rootDir": ".",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "typeRoots": ["./node_modules/@types", "./typings"]
+  },
+  "include": [
+    "api/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+} 
