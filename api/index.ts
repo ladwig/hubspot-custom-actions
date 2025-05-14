@@ -14,15 +14,11 @@ const HUBSPOT_REDIRECT_URI = process.env.HUBSPOT_REDIRECT_URI;
 const HUBSPOT_SCOPES = 'crm.objects.contacts.read crm.objects.contacts.write crm.objects.deals.read crm.objects.deals.write oauth';
 
 app.get('/', (req: Request, res: Response) => {
+  // Temporäres Logging, um Anfragen von HubSpot zu sehen
+  console.log(`Request received for / from IP: ${req.ip}, User-Agent: ${req.headers['user-agent']}`);
   res.json({
-    "title": "Einfache Karte",
-    "actions": [
-      {
-        "type": "IFRAME",
-        "uri": "https://example.com",
-        "buttonText": "Klick Mich"
-      }
-    ]
+    "title": "Absolut Einfacher Titel"
+    // Kein "actions"-Array, keine "properties"
   });
 });
 
