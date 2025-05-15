@@ -19,6 +19,8 @@ app.get('/', (req: Request, res: Response) => {
     "results": [
       {
         "objectId": 123,
+        "title": "",
+        "properties": [],
         "actions": [
           {
             "type": "ACTION_HOOK",
