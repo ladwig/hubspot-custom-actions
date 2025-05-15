@@ -19,14 +19,6 @@ app.get('/', (req: Request, res: Response) => {
     "results": [
       {
         "objectId": 123,
-        "title": "D2C Kostenvoranschlag",
-        "properties": [
-          {
-            "label": "Beschreibung",
-            "dataType": "STRING",
-            "value": "Klicken Sie auf den Button, um einen D2C Kostenvoranschlag zu erstellen."
-          }
-        ],
         "actions": [
           {
             "type": "ACTION_HOOK",
