@@ -18,22 +18,23 @@ app.get('/', (req: Request, res: Response) => {
   res.json({
     "results": [
       {
-        "objectId": 123, // Beispiel-ID, HubSpot überschreibt dies normalerweise mit dem Kontextobjekt
-        "title": "Beispielkarte mit Button",
+        "objectId": 123,
+        "title": "D2C Kostenvoranschlag",
         "properties": [
           {
             "label": "Beschreibung",
             "dataType": "STRING",
-            "value": "Dies ist eine Custom Card mit einem einfachen Button."
+            "value": "Klicken Sie auf den Button, um einen D2C Kostenvoranschlag zu erstellen."
           }
         ],
         "actions": [
           {
             "type": "ACTION_HOOK",
             "httpMethod": "POST",
-            "uri": "https://example.com/api/button-action", // Dies muss später deine eigene Hook-URL sein
-            "label": "Klick mich!",
-            "associatedObjectProperties": ["firstname", "lastname"] // HubSpot versucht, diese Properties zu laden
+            "uri": "https://hook.eu2.make.com/dvlvb6fsl5rakwevs1yg8vld4t62acrb",
+            "label": "D2C Kostenvoranschlag",
+            "propertiesToSend": ["hs_object_id"],
+            "associatedObjectProperties": []
           }
         ]
       }
